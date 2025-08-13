@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Race';
+    src: url('../Fonts/SpeedRunDemoRegular.ttf');
+}
+
+body {
+    background-color: black;
+    background-image:
+            linear-gradient(45deg, #1c1c1c 25%, transparent 25%),
+            linear-gradient(-45deg, #1c1c1c 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #1c1c1c 75%),
+            linear-gradient(-45deg, transparent 75%, #1c1c1c 75%);
+    background-size: 50px 50px;
+    background-position: 0 0, 0 25px, 25px -25px, -25px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-container {
+    background: repeating-linear-gradient(
+            -45deg,
+            #1c1c1c,
+            #1c1c1c 10px,
+            #2a2a2a 10px,
+            #2a2a2a 20px
+    );
+    letter-spacing: 2px;
+    display: grid;
+    grid-template-columns: auto;
+    border: black solid 5px;
+    border-radius: 30px;
+    justify-content: center;
+    width: 30rem;
+    height: 35rem;
+    text-align: center;
+    box-shadow: 0 0 3rem #f40006;
+    transition: box-shadow 0.3s ease;
+}
+.register-container:hover {
+    box-shadow: 0 0 7rem #f40006;
+}
+
+.register-text{
+    font-family: 'Race';
+    font-size: 2rem;
+    text-shadow:
+            -2px -2px 0 #f40006,
+            2px -2px 0 #f40006,
+            -2px 2px 0 #f40006,
+            2px 2px 0 #f40006,
+            -3px 0px 0 #f40006,
+            3px 0px 0 #f40006,
+            0px -3px 0 #f40006,
+            0px 3px 0 #f40006;
+}
+
+.message-text.success {
+    font-family: 'Race';
+    font-size: 2rem;
+    text-shadow:
+            -2px -2px 0 rgba(0, 220, 0, 0.53),
+            2px -2px 0 rgba(0, 220, 0, 0.53),
+            -2px 2px 0 rgba(0, 220, 0, 0.53),
+            2px 2px 0 rgba(0, 220, 0, 0.53),
+            -3px 0px 0 rgba(0, 220, 0, 0.53),
+            3px 0px 0 rgba(0, 220, 0, 0.53),
+            0px -3px 0 rgba(0, 220, 0, 0.53),
+            0px 3px 0 rgba(0, 220, 0, 0.53);
+}
+
+.message-text.error {
+    font-family: 'Race';
+    font-size: 2rem;
+    text-shadow:
+            -2px -2px 0 #f40006,
+            2px -2px 0 #f40006,
+            -2px 2px 0 #f40006,
+            2px 2px 0 #f40006,
+            -3px 0px 0 #f40006,
+            3px 0px 0 #f40006,
+            0px -3px 0 #f40006,
+            0px 3px 0 #f40006;
+}
+
+.input-register {
+    color: black;
+    background-color: #f40006;
+    border: #730005 solid 3px;
+    border-radius: 15px;
+    margin: 0.6rem;
+    box-shadow: 0 0 3px #f40006;
+    padding: 10px;
+    width: 80%;
+    height: 2rem;
+    transition: background-color 0.7s ease, transform 0.7s ease, border-color 0.7s ease, box-shadow 0.7s ease;
+}
+
+.input-register:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 220, 0, 0.53);
+    border-color: rgba(0, 220, 0, 0.53);
+    box-shadow: 0 0 15px rgba(0, 220, 0, 0.53);
+}
+
+.button-register {
+    background-color: #f40006;
+    width: 7rem;
+    border: #f40006 solid 3px;
+    border-radius: 0.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.3s ease, transform 0.5s ease, background-color 0.7s ease, border-color 0.7s ease;
+}
+
+.button-register:hover {
+    background-color: rgba(0, 220, 0, 0.53);
+    box-shadow: 0 0 15px rgba(0, 220, 0, 0.53);
+    border-color: rgba(0, 220, 0, 0.53);
+    transform: scale(1.1);
+}
+
+.button-register:disabled {
+    pointer-events: none;
+    background-color: gray;
+    border-color: gray;
+}

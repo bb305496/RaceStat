@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import "./CSS/Register.css"
 
 function Register() {
     const [username, setUsername] = useState('');
@@ -12,10 +13,12 @@ function Register() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
 
         if (!username || !email || !password) {
             setError("All fields are required");
             setSuccess(null);
+            setLoading(false);
             return;
         }
 
@@ -47,13 +50,16 @@ function Register() {
                 setUsername('');
                 setEmail('');
                 setPassword('');
+                setLoading(false);
             } else {
                 const errorData = await response.json();
                 setError(errorData.message || "Username or email already exists");
                 setSuccess(null);
+                setLoading(false);
             }
         } catch (error) {
             setError("Unable to connect to the server");
+            setLoading(false);
         }
     };
 
@@ -68,34 +74,51 @@ function Register() {
     }
 
     return(
-        <div>
-            <h2>Register</h2>
-            {success && <p>{success}</p>}
-            {error && <p>{error}</p>}
-
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="submit" disabled={loading}>
-                    Register
-                </button>
-            </form>
+        <div className="container">
+            <div className="register-container">
+                <div className="register-text">
+                    <h1>Register</h1>
+                </div>
+                <form className="input-container"
+                    onSubmit={handleSubmit}>
+                    <input
+                        className="input-register"
+                        type="text"
+                        placeholder="Username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <input
+                        className="input-register"
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <input
+                        className="input-register"
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <br/>
+                    <button className="button-register"
+                        type="submit" disabled={loading}>
+                        Register
+                    </button>
+                    <div>
+                        Loading...
+                    </div>
+                </form>
+                <div className={`message-text ${
+                    success ? 'success' : error ? 'error' : ''
+                }`}>
+                {success && <p>{success}</p>}
+                {error && <p>{error}</p>}
+                {(!success || !error) && <p></p>}
+                </div>
+            </div>
         </div>
     );
 
