@@ -7,3 +7,6 @@ class Account(models.Model):
     email = models.EmailField(unique=True)
     created = models.DateTimeField(auto_now_add=True)
     password = models.CharField(max_length=128)
+
+
+
