@@ -4,4 +4,5 @@ from accounts import views
 urlpatterns = [
     path('register/', views.register),
     path('login/', views.login),
+    path('users/', views.get_all_users),
 ]

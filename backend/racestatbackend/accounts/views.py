@@ -3,8 +3,13 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
-from .serializers import RegisterSerializer, LoginSerializer
+from .serializers import RegisterSerializer, LoginSerializer, AccountsSerializer
 
+@api_view(['GET'])
+def get_all_users(request):
+    user = User.objects.all()
+    serializer = AccountsSerializer(user, many=True)
+    return Response(serializer.data)
 
 @api_view(['POST'])
 def register(request):
