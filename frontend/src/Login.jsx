@@ -39,7 +39,6 @@ function Login({setToken}) {
             if(response.ok) {
                 const data = await response.json();
                 localStorage.setItem('token', data.token);
-                localStorage.setItem('username', data.username);
                 setToken(data.token);
                 setSuccess(`Welcome ${data.username}`);
                 setError(null);

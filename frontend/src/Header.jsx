@@ -19,7 +19,6 @@ function Header({token, setToken}) {
             <div className="header-title">RaceStat</div>
             <div><Link className="header-buttons" to="/">Home</Link></div>
             <div><Link className="header-buttons" to="/tracks">Tracks</Link></div>
-            <div><Link className="header-buttons" to="/contact">Contact</Link></div>
             <div><Link className="header-buttons" to="/price-list">Price-list</Link></div>
             <div><Link className="header-buttons" to="/aboutus">About us</Link></div>
 
