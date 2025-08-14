@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'Race';
+    src: url('../Fonts/SpeedRunDemoRegular.ttf');
+}
+
+body{
+    margin: 0;
+}
+
+.header-container {
+    background-color: #f40006;
+    height: auto;
+    padding-right: 1rem;
+    padding-bottom: 0.3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    border: 5px black solid;
+    border-radius: 3rem;
+    box-shadow: 0 0 20px #f40006;
+    overflow: hidden;
+    animation-name: box-shadow-header-animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes box-shadow-header-animation {
+    0% {box-shadow: 0 0 5px #f40006;}
+    50% {box-shadow: 0 0 15px #f40006;}
+    100% {box-shadow: 0 0 5px #f40006;}
+}
+
+.header-container > div:first-child {
+    margin-right: auto;
+    padding-bottom: 0;
+}
+
+.header-container > div:nth-child(2) {
+    margin-right: auto;
+    padding-bottom: 0;
+}
+
+.header-image {
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 10px #000000;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+    border-radius: 50%;
+    width: 10rem;
+    animation-name: image-border-animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes image-border-animation {
+    0% {border-color: white; box-shadow: 0 0 10px #000000;}
+    50% {border-color: black; box-shadow: 0 0 10px #ffffff;}
+    100% {border-color: white; box-shadow: 0 0 10px #000000;}
+}
+
+.header-title {
+    font-family: 'Race';
+    font-size: 7rem;
+    color: white;
+    text-shadow: 3px 3px 1px #000000;
+    transition: transform 0.5s ease, text-shadow 0.5s ease;
+}
+
+.header-title:hover {
+    transform: scale(1.1);
+    text-shadow: 5px 5px 1px #000000;
+}
+
+.header-buttons {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1.5rem;
+    background-color: black;
+    color: #f40006;
+    border: 2px white solid;
+    border-radius: 1rem;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 3px 3px 4px #000000;
+    transition: box-shadow 0.3s ease, transform 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-buttons::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+            120deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.23) 50%,
+            transparent 100%
+    );
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+}
+
+.header-buttons:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 7px #000000;
+}
+
+.header-buttons:hover::after {
+    left: 120%;
+}
+
+@media (max-width: 500px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .header-title {
+        font-size: 5rem;
+    }
+
+    .header-container > div:first-child {
+        margin-right: 0;
+    }
+
+    .header-container > div:nth-child(2) {
+        margin-right: 0;
+    }
+
+    .header-container > div:not(:first-child :nth-child(2)) {
+        font-size: 0.5rem;
+    }
+
+    .header-buttons {
+        padding: 0.5rem;
+    }
+}

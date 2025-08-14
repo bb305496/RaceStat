@@ -1,0 +1,77 @@
+.f1-lights-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f1-lights-panel {
+    background-color: #111827;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border: 2px solid #374151;
+}
+
+.f1-lights-panel--small {
+    width: 128px;
+    height: 32px;
+}
+
+.f1-lights-panel--medium {
+    width: 192px;
+    height: 48px;
+}
+
+.f1-lights-panel--large {
+    width: 256px;
+    height: 64px;
+}
+
+.f1-lights-panel--xl {
+    width: 320px;
+    height: 80px;
+}
+
+.f1-light {
+    border-radius: 50%;
+    border: 2px solid;
+    transition: all 0.3s ease;
+}
+
+.f1-light--small {
+    width: 16px;
+    height: 16px;
+}
+
+.f1-light--medium {
+    width: 24px;
+    height: 24px;
+}
+
+.f1-light--large {
+    width: 32px;
+    height: 32px;
+}
+
+.f1-light--xl {
+    width: 40px;
+    height: 40px;
+}
+
+.f1-light--active {
+    background-color: #ef4444;
+    border-color: #dc2626;
+}
+
+.f1-light--inactive {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+.f1-light--glow {
+    box-shadow: 0 0 2rem rgb(239, 68, 68),
+    0 2px 4px -1px rgba(239, 68, 68, 0.1);
+}

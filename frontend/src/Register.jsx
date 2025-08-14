@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import "./CSS/Register.css"
+import Loading from "./Loading.jsx";
 
 function Register() {
     const [username, setUsername] = useState('');
@@ -108,7 +109,7 @@ function Register() {
                         Register
                     </button>
                     <div>
-                        Loading...
+                        {loading && <Loading/>}
                     </div>
                 </form>
                 <div className={`message-text ${
