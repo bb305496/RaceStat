@@ -3,6 +3,11 @@
     src: url('../Fonts/SpeedRunDemoRegular.ttf');
 }
 
+@font-face {
+    font-family: 'Race1';
+    src: url('../Fonts/RacingEngine-Sharps.otf');
+}
+
 body {
     overflow-x: hidden;
     background-color: black;
@@ -48,8 +53,8 @@ body {
 }
 
 .register-text{
-    font-family: 'Race';
-    font-size: 2rem;
+    font-family: 'Race1';
+    font-size: 1.6rem;
     text-shadow:
             -2px -2px 0 #f40006,
             2px -2px 0 #f40006,
@@ -62,7 +67,7 @@ body {
 }
 
 .message-text.success {
-    font-family: 'Race';
+    font-family: 'Race1';
     font-size: 2rem;
     text-shadow:
             -2px -2px 0 rgba(0, 220, 0, 0.53),
@@ -76,7 +81,7 @@ body {
 }
 
 .message-text.error {
-    font-family: 'Race';
+    font-family: 'Race1';
     font-size: 2rem;
     text-shadow:
             -2px -2px 0 #f40006,
