@@ -131,3 +131,9 @@ body {
     background-color: gray;
     border-color: gray;
 }
+
+@media (max-width: 500px){
+    .register-container {
+        margin: 2rem;
+    }
+}

@@ -56,7 +56,7 @@ function Login({setToken}) {
                 setLoading(false)
             }
         } catch (error) {
-            setError("Unable to connect to server");
+            setError("Unable to connect to the server");
             setLoading(false);
         }
     }
