@@ -1,0 +1,28 @@
+.home-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.home-elements {
+    background: repeating-linear-gradient(
+            -45deg,
+            #1c1c1c,
+            #1c1c1c 10px,
+            #2a2a2a 10px,
+            #2a2a2a 20px
+    );
+    letter-spacing: 2px;
+    font-size: 1.6rem;
+    color: white;
+    display: grid;
+    border: black solid 5px;
+    border-radius: 30px;
+    text-align: center;
+    padding: 1rem;
+    margin: 2rem;
+}
+
+.home-elements > div {
+    margin: 1rem;
+}
