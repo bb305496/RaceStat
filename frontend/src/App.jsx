@@ -1,15 +1,19 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Register from "./Register.jsx";
 import Header from "./Header.jsx";
+import Login from "./Login.jsx";
+import {useState} from "react";
 
 function App() {
+    const [token, setToken] = useState(localStorage.getItem('token'));
   return (
     <BrowserRouter>
       <div>
-        <Header />
+        <Header token={token} setToken={setToken}/>
           <Routes>
-            <Route path="/signup" element={<Register/>}></Route>
-
+              <Route path="/signup" element={<Register/>}></Route>
+              <Route path="/signin" element={<Login setToken={setToken}/>}></Route>
+              <Route path="/" element={<div>Home Page</div>}></Route>
           </Routes>
       </div>
     </BrowserRouter>

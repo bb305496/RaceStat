@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import "./CSS/Register.css"
+import "./CSS/RegisterAndLogin.css"
 import Loading from "./Loading.jsx";
 
 function Register() {
@@ -7,10 +7,10 @@ function Register() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const [token, setToken] = useState(localStorage.getItem('token'));
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -42,16 +42,14 @@ function Register() {
             });
 
             if (response.ok) {
-                const data = await response.json();
-                localStorage.setItem('token', data.token);
-                setToken(data.token);
-                setSuccess("Successfully registered");
+                setSuccess("Successfully registered you can log in now");
                 setError(null);
 
                 setUsername('');
                 setEmail('');
                 setPassword('');
                 setLoading(false);
+
             } else {
                 const errorData = await response.json();
                 setError(errorData.message || "Username or email already exists");
@@ -63,16 +61,6 @@ function Register() {
             setLoading(false);
         }
     };
-
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        setToken('');
-        setUsername('');
-        setEmail('');
-        setPassword('');
-        setSuccess(null);
-        setError(null);
-    }
 
     return(
         <div className="container">
@@ -112,9 +100,8 @@ function Register() {
                         {loading && <Loading/>}
                     </div>
                 </form>
-                <div className={`message-text ${
-                    success ? 'success' : error ? 'error' : ''
-                }`}>
+                <div className={`message-text 
+                ${success ? 'success' : error ? 'error' : ''}`}>
                 {success && <p>{success}</p>}
                 {error && <p>{error}</p>}
                 {(!success || !error) && <p></p>}
