@@ -5,8 +5,6 @@ function Header({token, setToken}) {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('username');
         setToken(null);
         navigate('/signin');
     }
