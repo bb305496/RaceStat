@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import "./CSS/RegisterAndLogin.css"
 import Loading from "./Loading.jsx";
+import useSound from "use-sound";
 
 function Register() {
     const [username, setUsername] = useState('');
@@ -9,7 +10,9 @@ function Register() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
-
+    const [playSound] = useSound('/sound_effect.mp3',{
+        volume: 0.25,
+    });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -41,8 +44,10 @@ function Register() {
             });
 
             if (response.ok) {
-                setSuccess("Successfully registered you can log in now");
+                setSuccess("Successfully registered");
                 setError(null);
+                console.log("Play sound!")
+                playSound();
 
                 setUsername('');
                 setEmail('');

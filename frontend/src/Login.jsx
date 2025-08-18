@@ -2,6 +2,7 @@ import { useState } from "react";
 import {useNavigate} from "react-router-dom";
 import "./CSS/RegisterAndLogin.css"
 import Loading from "./Loading.jsx";
+import useSound from "use-sound";
 
 function Login({setToken}) {
     const [username, setUsername] = useState("");
@@ -10,6 +11,9 @@ function Login({setToken}) {
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
     const navigate = useNavigate();
+    const [playSound] = useSound('/sound_effect.mp3',{
+        volume: 0.25,
+    });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -41,6 +45,7 @@ function Login({setToken}) {
                 setToken(data.token);
                 setSuccess(`Welcome ${data.username}`);
                 setError(null);
+                playSound();
 
                 setUsername('');
                 setPassword('');
