@@ -1,0 +1,37 @@
+.details-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.track-details-container {
+    display: grid;
+    background: repeating-linear-gradient(
+            -45deg,
+            #1c1c1c,
+            #1c1c1c 10px,
+            #2a2a2a 10px,
+            #2a2a2a 20px
+    );
+    border: 5px red solid;
+    border-radius: 10px;
+    animation-name: enter_anim;
+    animation-duration: 1s;
+}
+
+.track-details-image-size {
+    width: 30rem;
+    height: 28rem;
+}
+
+@keyframes enter_anim {
+    from {transform: scale(0)}
+    to {transform: scale(1);}
+}

@@ -23,7 +23,4 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('', include('homepage.urls')),
     path('', include('tracks.urls')),
-]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
