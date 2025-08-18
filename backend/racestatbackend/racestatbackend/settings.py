@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'accounts',
     'homepage',
     'tracks',
+    'pricelist',
     'rest_framework',
     'rest_framework.authtoken',
 ]
