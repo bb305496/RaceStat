@@ -13,6 +13,8 @@
 
 .track-details-container {
     display: grid;
+    gap: 1rem;
+    padding: 2rem;
     background: repeating-linear-gradient(
             -45deg,
             #1c1c1c,
@@ -20,18 +22,68 @@
             #2a2a2a 10px,
             #2a2a2a 20px
     );
-    border: 5px red solid;
+    border: 5px black solid;
     border-radius: 10px;
+    box-shadow: 0 0 2rem red;
     animation-name: enter_anim;
     animation-duration: 1s;
 }
 
+
+.track-details-name {
+    color: red;
+    font-weight: bold;
+    font-size: 3rem;
+    text-shadow: 1rem 1rem 0.3rem black;
+    margin-bottom: 2rem;
+}
+
 .track-details-image-size {
-    width: 30rem;
-    height: 28rem;
+    width: 33rem;
+    height: 20rem;
+    border: 5px black solid;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.70);
+    padding: 1rem;
+}
+
+.track-details-details {
+    color: white;
+    border: 5px black solid;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.52);
+}
+
+.track-details-details > div {
+    padding: 0.2rem;
+    font-weight: bold;
+}
+
+.track-title-info {
+    font-size: 2rem;
+}
+
+.track-details-details-title {
+    color: #f40006;
 }
 
 @keyframes enter_anim {
     from {transform: scale(0)}
     to {transform: scale(1);}
+}
+
+@media (max-width: 500px) {
+    .track-details-image-size {
+        width: 15rem;
+        height: 10rem;
+    }
+
+    .track-details-name {
+        font-size: 2rem;
+    }
+
+    .track-details-details {
+        padding: 0.1rem;
+    }
+
 }

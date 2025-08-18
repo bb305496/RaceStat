@@ -28,3 +28,9 @@
     margin-right: 0.5rem;
     text-shadow: 3px 3px 3px #000000;
 }
+
+@media (max-width: 500px) {
+    .footer-container {
+        height: 4rem;
+    }
+}
