@@ -3,8 +3,25 @@
 The website was created as a platform for motorsport and automotive enthusiasts. It provides access to race stories, tracks with detailed information, and a price list of available cars including their specifications and daily rental costs.
 
 ## Screens
-Main Page
-![Opis obrazka](./assets/main_page.png)
+### Home Page
+![Home Page](./assets/main_page.png)
+
+### Track Page
+![Track Page](./assets/tracks_page.png)
+
+### Track Details
+![Track Details](./assets/tracks_details.png)
+
+### Price-list Page
+![Price List](./assets/price_list.png)
+
+### Footer
+![Footer](./assets/footer.png)
+
+### Login and register
+![Login](./assets/login_page.png) 
+![Register](./assets/register_page.png)
+
 
 ## Technologies
 1. Backend:
