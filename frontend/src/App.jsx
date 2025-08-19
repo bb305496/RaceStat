@@ -5,6 +5,7 @@ import Login from "./Login.jsx";
 import Home from "./Home.jsx";
 import Footer from "./Footer.jsx";
 import Tracks from "./Tracks.jsx";
+import PriceList from "./PriceList.jsx";
 import {useState} from "react";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
               <Route path="/signup" element={<Register/>}></Route>
               <Route path="/signin" element={<Login setToken={setToken}/>}></Route>
               <Route path="/tracks" element={<Tracks/>}></Route>
+              <Route path="/price-list" element={<PriceList/>}></Route>
           </Routes>
           <Footer/>
       </div>
